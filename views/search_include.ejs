@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    window.onload = ()=>{
+        console.log('works')
+        document.getElementById('mySearch').addEventListener('submit',function(event){
+            event.preventDefault();
+            const searchQuery = document.getElementById('search-input').value;
+            window.location = `/search?query=${searchQuery}`
+            // http://localhost:3000/search?query=gintama&type=raws
+            console.log(searchQuery)
+        })
+    }
+</script>
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form id="mySearch" class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+
+        </form>
+</div>
+

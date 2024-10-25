@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Viz Raws</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <%- include("header") %>
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                        <a href="/categories">Categories</a>
+                        <a href="/category?type=raws"><%- type %></a>
+                        <span><%- name %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="anime__details__pic set-bg" data-setbg="/<%- series %>/image.png"></div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3><%- name %></h3>
+                            </div>
+                            <div class="anime__details__widget">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>Type:</span> <%- type.charAt(0).toUpperCase() + type.slice(1) %></li>
+                                            <li><span>Author:</span> <%- author %></li>
+                                            <li><span>Date published:</span> <%- date %></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>Genre:</span> <%- genre %></li>
+                                            <li><span>Chapters:</span> <%- chapters.length %></li>
+                                            <li><span>Status:</span> <%- status %></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anime__details__btn">
+                                <a href="/read/<%- series %>/<%- chapters[0].chapter %>/<%- type %>" class="follow-btn">Read</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="anime__details__review">
+                            <div class="section-title">
+                                <h5>Chapters</h5>
+                            </div>
+
+                            <% for (var i = 0; i < chapters.length; i++) { %>
+                                <a href="/read/<%- series %>/<%- chapters[i].chapter %>/<%- type %>">
+                                    <div class="anime__review__item">
+                                        <div class="anime__review__item__text">
+                                            <p>Chapter <%- chapters[i].chapter %> - <%- chapters[i].name %></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Anime Section End -->
+
+        <%- include("footer") %>
+
+          <!-- Search model Begin -->
+
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/player.js"></script>
+        <script src="/js/jquery.nice-select.min.js"></script>
+        <script src="/js/mixitup.min.js"></script>
+        <script src="/js/jquery.slicknav.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/main.js"></script>
+
+    </body>
+
+    </html>

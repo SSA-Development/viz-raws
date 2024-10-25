@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Upload</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" action="/api/create">
+        <input type="file" name="file"><br>
+        <p>Series name: </p><input type="text" name="series"><br>
+        <p>Display name: </p><input type="text" name="name"><br>
+        <p>Author: </p><input type="text" name="author"><br>
+        <p>Date published: </p><input type="text" name="date"><br>
+        <p>Genre: </p><input type="text" name="genre"><br>
+        <p>Status: </p><input type="text" name="status"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

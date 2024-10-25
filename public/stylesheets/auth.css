@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    background-color: #1d202b;
+    /* background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+    /* background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); */
+}
+
+
+/* .registeration-form label{
+	color: black;
+  } */
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	margin-top: 6%;
+	flex-wrap: wrap;
+    
+}
+
+.login-form {
+	flex: 1;
+    background-color: #383E56;
+	width: 32vw;
+    line-height: 200%;
+    border-radius: 20px;
+}
+
+.login-form input {
+    width: 60%;
+    height: 2rem;
+    border: none;
+    border-radius: 7px;
+    display: block;
+	/* margin: 0; */
+    background-color: #222831;
+    color: white;
+}
+
+.login-buttons {
+	flex: 1;
+    width: 15rem;
+    display: flex;
+    height: 10rem;
+    justify-content: space-between;
+}
+
+.login-form label {
+
+    /* text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px; */
+}
+
+.login-form button {
+    margin-top: 40px;
+    border: none;
+    color: white;
+    background-color: #2196F3;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 5px;
+    box-shadow: 2px 5px #1d202b;
+}
+
+.login-buttons {
+    width: 65%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+}
+
+.login-buttons > .register-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.login-form button:hover {
+    cursor: pointer;
+}

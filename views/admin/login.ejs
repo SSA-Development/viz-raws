@@ -1,0 +1,56 @@
+<head>
+    <link rel='stylesheet' href="/stylesheets/style.css">
+	<link rel='stylesheet' href="/stylesheets/auth.css">
+</head>
+<body> 
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+	<script>
+		async function checkUser(){
+			const username = document.getElementById('username').value
+			const password = document.getElementById('password').value
+			try{
+				var res = await axios({
+					method: 'POST',
+					url: '/admin/login',
+					data:{
+						username: username,
+						password: password
+					},
+					headers: {
+						Authorization: undefined
+					}
+				});
+				// console.log(res)
+				if(res.status == 200){
+					window.location.href = '/admin/upload'
+				}
+			}
+			catch (err){
+				alert("Invalid username or password. Check console for details (CTRL+SHIFT+I)");
+				console.error(err);
+			}
+			// window.location.href = '/';
+		}
+	</script>
+	<br>
+	<div class="login-container">
+		<div class="login-form">
+			<center>
+				<div class="login-header">
+					<h2>Login to your Admin account</h2>
+                </div>
+				<label for="username">Username</label>
+				<input id="username">
+				<label for="password">Password</label>
+				<input id="password" type="password">
+				<div class="login-buttons">
+
+				    <button type="submit" class="login-button" onclick="checkUser();">LOGIN</button>
+
+				</div>
+			</center>
+		</div>
+	</div>
+</body>
+

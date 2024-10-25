@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Viz Raws</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <%- include("header") %>
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                        <!-- <span>Search</span> -->
+                        <a href="/"><i class="fa fa-search"></i> search</a>
+                        <span><%- query%></span>
+                        <!-- <span>S</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product Section Begin -->
+    <section class="product-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="product__page__content">
+
+                        <div class="row">
+                          <div class="col-lg-8 col-md-8 col-sm-6">
+                              <div class="section-title">
+                                  <h4>Chapters</h4>
+                              </div>
+                          </div>
+                      </div>
+                      <%if (chapters.length > 0) { %>
+                        <div class="row">
+                          <% for (var i = 0; i < chapters.length; i++) { %>
+
+                          
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                              <div class="product__item">
+                                  <!-- onepiece -->
+                                  <a href="/series/<%-chapters[i].s_name%>?type=chapters"><div class="product__item__pic set-bg" data-setbg="/<%- chapters[i].s_name%>/image.png"></div></a>
+                                  <div class="product__item__text">
+                                    
+                                      <h5><a href="/series/<%-raws[i].s_name%>?type=chapters"><%- chapters[i].d_name %></a></h5>
+                                  </div>
+                              </div>
+                          </div>
+                        <% } %>
+                          
+                        <% } else {%>
+                          <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <!-- onepiece -->
+ 
+                                      <div class="product__item__text">
+
+                                        <h4 style="color: white;font-weight: bolder;">No Chapters found</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                      
+                    </div>
+                    <br>
+                        <div class="row">
+                          <div class="col-lg-8 col-md-8 col-sm-6">
+                              <div class="section-title">
+                                  <h4>Raws</h4>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <%if (raws.length > 0) { %>
+                        <div class="row">
+                        <% for (var i = 0; i < raws.length; i++) { %>
+
+                          
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <a href="/series/<%-raws[i].s_name%>?type=raws"><div class="product__item__pic set-bg" data-setbg="/<%- raws[i].s_name %>/image.png"></div></a>
+                                    <div class="product__item__text">
+                                      
+                                        <h5><a href="/series/<%-raws[i].s_name%>?type=raws"><%- raws[i].d_name %></a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        <% } %>
+                      </div>
+                        
+                        <% } else {%>
+                          <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <!-- onepiece -->
+ 
+                                      <div class="product__item__text">
+
+                                        <h4 style="color: white;font-weight: bolder;">No Raws found</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                      
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-8 col-sm-6">
+                          <div class="section-title">
+                              <h4>Spoilers</h4>
+                          </div>
+                      </div>
+                  </div>
+                  <%if (spoilers.length > 0) { %>
+                    <div class="row">
+                      <% for (var i = 0; i < spoilers.length; i++) { %>
+
+                          
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <!-- http://localhost:3000/series/jjk?type=raws -->
+                                <a href="/series/<%-spoilers[i].s_name%>?type=spoilers"><div class="product__item__pic set-bg" data-setbg="/<%- spoilers[i].s_name %>/image.png"></div></a>
+                                <div class="product__item__text">
+                                  
+                                    <h5><a href="/series/<%-spoilers[i].s_name%>?type=spoilers"><%- spoilers[i].d_name %></a></h5>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    <% } %>
+                    <% } else {%>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <!-- onepiece -->
+
+                                  <div class="product__item__text">
+
+                                    <h4 style="color: white;font-weight: bolder;">No spoilers found</h4>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                  
+                </div>
+ 
+                    </div>
+                    
+                </div>
+                
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+
+<%- include("footer") %>
+
+  <!-- Search model Begin -->
+  
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/player.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
